@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import "./assets/styles/_base.scss";
+import "./assets/styles/_variables.scss";
+import Header from './components/Header';
 
 function App() {
+  let dark =localStorage.getItem("dark") || false;
+  let initialMode =dark==="true"?true:false;
+  let [mode,setMode]=useState(initialMode);
+  const onChangeMode=(data)=>{
+    setMode(data);
+    localStorage.setItem("dark", data)
+  } 
+  let html =document.getElementsByTagName("html");
+  if(mode){
+    html[0].setAttribute("data-theme", "dark");
+  }
+  else{
+    html[0].setAttribute("data-theme", "");
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header onChangeMode={onChangeMode} mode={mode}/>
     </div>
   );
 }

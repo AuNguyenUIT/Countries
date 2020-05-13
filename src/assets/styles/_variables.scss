@@ -1,0 +1,13 @@
+html{
+    --color-element: hsl(0, 0%, 100%);
+    --color-bg: hsl(0, 0%, 98%);
+    --color-input:  hsl(0, 0%, 52%);
+    --color-text: hsl(200, 15%, 8%);
+    --font-home: 1.4rem;
+    --font-Detail: 1.6rem;
+}
+html[data-theme='dark']{
+    --color-element: hsl(209, 23%, 22%);
+    --color-bg: hsl(207, 26%, 17%);
+    --color-text: hsl(0, 0%, 100%);
+}
