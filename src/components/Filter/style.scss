@@ -1,0 +1,105 @@
+.filter{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 4.5rem;
+    position: relative;
+    &__name{
+        align-self: stretch;
+        input{
+            width: 41rem;
+            padding:2rem 0 2rem 8rem;
+            background-color: var(--color-element);
+            border: none;
+            outline:none;
+            color:var(--color-text);
+            border-radius:1rem;
+            &::placeholder{
+                color:var(--color-text);
+                font-weight: 300;
+            }
+        }
+        label{
+            position: absolute;
+            top: 2rem;
+            left: 4rem;
+            i{
+                font-size: 1.6rem;
+                color:var(--color-text);
+            }
+        }
+    }
+    &__region{
+        width: 20rem;
+        color: var(--color-text);
+        position: relative;
+      
+        .select-box{
+            position: absolute;
+            top: 0;left: 0;
+            display: flex;
+            width: 100%;
+            flex-direction: column; 
+           .selected{
+            cursor: pointer;
+            box-sizing: border-box;
+            display:flex;
+            font-size:1.4rem;
+            line-height: 1;
+            padding: 2.1rem;
+            background-color: var(--color-element);
+            border-radius:1rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            font-weight: 600;
+            &::after{
+                content:"\f078";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                transition: all 0.5s;
+            }
+            }
+            .options-container{
+                order: 1;
+                background-color: var(--color-element);
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                width: 100%;
+                transition: all 0.4s;
+                border-radius:1rem;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-50%);
+                overflow: hidden;
+                .option{
+                    display: block;
+                 
+                    padding-left: 2.1rem;
+                    input{
+                        display: none;
+                    }
+                    label{
+                        padding:1rem 0;
+                        cursor: pointer;
+                        display: block;
+                        font-size:1.4rem
+                    }
+                    &:hover{
+                        background-color: var(--color-bg);
+                    }
+                }
+            }
+           .options-container--active{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            }
+            .options-container--active +.selected::after{
+                    transform: rotate(180deg);
+            }
+        }
+
+    }
+}

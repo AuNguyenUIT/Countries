@@ -1,7 +1,12 @@
 import React from "react";
 import "./style.scss";
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
-Header.propTypes = {};
+Header.propTypes = {
+  mode: PropTypes.bool,
+  onChangeMode: PropTypes.func
+};
 
 function Header({mode, onChangeMode}) {
     const  handleChange=(e)=>{
@@ -12,7 +17,7 @@ function Header({mode, onChangeMode}) {
   return (
     <header className="header">
       <div className="container header__inner">
-        <h2 className="header__title">Where in the world?</h2>
+        <Link to="/" className="header__title">Where in the world?</Link>
         <div className="header__action">
           <input type="checkbox" name="darkmode" className="switch__mode" onChange={handleChange} checked={checked}
          />

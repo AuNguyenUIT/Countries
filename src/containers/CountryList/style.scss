@@ -1,0 +1,17 @@
+.country{
+    max-width: 100%;
+    background-color:var(--color-bg);
+    padding-top: 7.8rem;
+    min-height: 100vh;
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+       margin: 0  -3.8rem;
+    }
+    .not-data{
+        font-size:4rem;
+        margin: 30vh auto;
+
+        color: var(--color-text);
+    }
+}
