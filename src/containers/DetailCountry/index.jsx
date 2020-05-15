@@ -59,6 +59,9 @@ function DetailCountry({ match, history,location }) {
       return <Link className="btn border__item" key={country.alpha3Code} to={`${country.alpha3Code}`}>{country.name}</Link>
       })
     }
+    else{
+      return <p>&nbsp;No have borders</p>
+    }
     return result;
   }
   let url=history.createHref(location);

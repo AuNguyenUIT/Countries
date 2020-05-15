@@ -10,7 +10,7 @@ import {fetchListCountrySuccess, fetchListCountryError, getCountrySuccess, getCo
 
 
 function* fetchListCountrySaga(){
-    console.log("fetchListCountrySaga");
+
     let res= yield call(fetchList);
     let {status,data}=res;
     if (status === STATUS_CODE.SUCCSESS) {
@@ -21,7 +21,7 @@ function* fetchListCountrySaga(){
 }
 
 function* getCountrySaga(code){
-    console.log("getCountrySaga")
+
     let res= yield call(getCountry, code.payload.code);
     let {status,data}=res;
     if (status === STATUS_CODE.SUCCSESS) {
@@ -32,7 +32,7 @@ function* getCountrySaga(code){
 }
 
 function* fetchBorderCountrySaga(codes){
-    console.log("fetchBorderCountrySaga");
+
     if(codes.payload.codes){
         let res= yield call(fetchListBorder, codes.payload.codes);
         let {status,data}=res;
