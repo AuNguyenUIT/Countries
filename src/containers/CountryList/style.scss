@@ -1,3 +1,4 @@
+@import "../../assets/styles/mixin";
 .country{
     max-width: 100%;
     background-color:var(--color-bg);
@@ -6,7 +7,11 @@
     &__list{
         display: flex;
         flex-wrap: wrap;
-       margin: 0  -3.8rem;
+        margin: 0;
+  
+       @include respond-to(mobile){
+        margin: 0  -3.8rem;
+        }
     }
     .not-data{
         font-size:4rem;

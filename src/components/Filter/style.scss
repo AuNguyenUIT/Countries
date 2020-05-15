@@ -1,22 +1,35 @@
+@import "../../assets/styles/mixin";
 .filter{
     display: flex;
+    flex-direction: column;
+    @include respond-to(tablet){
+        flex-direction: row ;
+    }
+        
+
     justify-content:space-between;
     margin-top: 4.5rem;
     position: relative;
     &__name{
         align-self: stretch;
         input{
-            width: 41rem;
-            padding:2rem 0 2rem 8rem;
             background-color: var(--color-element);
             border: none;
             outline:none;
             color:var(--color-text);
             border-radius:1rem;
+            width: calc(100% - 8rem);
+            padding:2rem 0 2rem 8rem;
+            margin-bottom: 2rem;
             &::placeholder{
                 color:var(--color-text);
                 font-weight: 300;
             }
+            @include respond-to(tablet){
+                    width: 41rem;
+                    padding:2rem 0 2rem 8rem;
+            }
+      
         }
         label{
             position: absolute;
@@ -29,10 +42,15 @@
         }
     }
     &__region{
-        width: 20rem;
         color: var(--color-text);
         position: relative;
-      
+        width: calc(100% - 8rem);
+        padding:2rem 0 2rem 8rem ;
+        margin-bottom: 5rem;
+
+        @include respond-to(tablet){
+            width: 20rem;
+        }
         .select-box{
             position: absolute;
             top: 0;left: 0;
@@ -70,9 +88,10 @@
                 transition: all 0.5s;
                 border-radius:1rem;
                 opacity: 0;
-                visibility: hidden;
+                position: absolute;
+                top: 7rem;
                 transform: translateY(-50%);
-                overflow: hidden;
+                visibility: hidden;
                 .option{
                     display: block;
                  

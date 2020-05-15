@@ -3,7 +3,8 @@ ul.pagination {
   margin-top: 0;
   margin-bottom: 0;
   list-style:  none;
-display:flex;
+  display:flex;
+
   li.page-item.active {
     a.page-link {
       color: var(--color-text);
@@ -37,6 +38,8 @@ display:flex;
   color: var(--color-text);
   margin-bottom:4rem;
   margin-top: 4rem;
+
+
   h2{
     &:nth-last-child(2){
       margin: 0 4rem;

@@ -125,13 +125,13 @@ function Pagination({ totalRecords, pageLimit, pageNeighbours,onPageChanged,show
   const pages = fetchPageNumbers();
 
   return (
-    <div>
+    <div className="">
       <div className="info">
         <h2 className="total-countries">{totalRecords} Countries</h2>
         <h2>|</h2>
         <h2 className="current-page">{showPage}/{totalPages}</h2>
       </div>
-      <nav aria-label="Countries Pagination">
+      <nav aria-label="Countries">
         <ul className="pagination">
           {pages.map((page, index) => {
             if (page === LEFT_PAGE)
